@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding:0%;
+    list-style: none;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+    to top right,
+    hsl(0, 0%, 0%) 0%,
+    hsl(236, 100%, 1.91%) 7.5%,
+    hsl(236, 100%, 4.2%) 15.1%,
+    hsl(236, 100%, 6.83%) 22.8%,
+    hsl(236, 100%, 9.77%) 30.5%,
+    hsl(236, 100%, 12.96%) 38.1%,
+    hsl(236, 100%, 16.38%) 45.7%,
+    hsl(236, 100%, 19.97%) 53.1%,
+    hsl(236, 100%, 23.69%) 60.3%,
+    hsl(236, 100%, 27.5%)  67.2%,
+    hsl(236, 100%, 31.37%) 73.9%,
+    hsl(236, 100%, 35.25%) 80.1%,
+    hsl(236, 100%, 39.09%) 85.9%,
+    hsl(236, 100%, 42.86%) 91.1%,
+    hsl(236, 100%, 46.51%) 95.9%,
+    hsl(236, 100%, 50%) 100%);
+}
+
+.general-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 80%;
+    height: 100%;
+    margin: 0%;
+}
+
+.output-area, .input-area {
+    width: 85%;
+    height: 30%;
+    margin: auto;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 1px;
+    font-size: x-large;
+    color: powderblue;
+    border: rgb(255, 0, 0) 0.25em solid;
+    border-radius: 0.25em;
+    padding: 0.25em, 1em;
+    opacity: 0.6;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 
+                 0 0 0.45em currentColor;
+    background: rgba(0, 0, 0,5);
+    box-shadow: inset 0 0 0.5em 0 rgb(210, 4, 4), 
+                0 0 0.5em 0 rgb(210, 4, 4);
+}
+
+.input-area {
+    resize: none;
+    outline: none;
+}
+
+.console-message {
+    display: block;
+    white-space: nowrap;
+    color: powderblue;
+    border-right: 3px solid powderblue;
+    margin: auto;
+    font-size: x-large;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 
+                 0 0 0.45em currentcolor;
+    width: 11ch;
+    animation: typing 2.0s steps(11),
+               blink 1.5s infinite alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from {width: 0;}
+}
+
+@keyframes blink {
+    70% {border-color: transparent;}
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 30px;
+    margin: auto;
+}
+
+i {
+    position: relative;
+    top: 25%;
+    right: 0%;
+}
+
+ul a {
+    position: relative;
+    display: block;
+    color: #555;
+    font-size: 30px;
+    height: 60px;
+    width: 60px;
+    background: #171515;
+    line-height: 60px;
+    border-radius: 50%;
+    margin: auto;
+    justify-items: baseline;
+    justify-content: baseline;
+    cursor: pointer;
+    transition: .5s;
+}
+
+ul a::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.9);
+    transition: .5s;
+}
+
+ul a:nth-child(1)::before {
+    background: #2a6cbb;
+}
+
+ul a:nth-child(1):hover::before {
+    box-shadow: 0 0 15px #2a6cbb;
+}
+
+ul a:nth-child(1):hover {
+    color: #2a6cbb;
+    box-shadow: 0 0 15px #2a6cbb;
+    text-shadow: 0 0 15px #2a6cbb;
+}
+
+ul a:nth-child(2)::before {
+    background: #e6e6e6;
+}
+
+ul a:nth-child(2):hover::before {
+    box-shadow: 0 0 15px #e6e6e6;
+}
+
+ul a:nth-child(2):hover {
+    color: #e6e6e6;
+    box-shadow: 0 0 15px #e6e6e6;
+    text-shadow: 0 0 15px #e6e6e6;
+}
+
+ul a:hover::before {
+    filter: blur(3px);
+    transform: scale(1.2);
+}
+
+.buttons {
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(170px, 1fr)
+    );
+    grid-gap: 15px;
+    grid-row: 20px;
+}
+
+.encrypt-button, .decrypt-button, .copy-button {
+    position: relative;
+    display: block;
+    margin: auto;
+    font-family: 'Press Start 2P', cursive;
+    letter-spacing: 1px;
+    width: 170px;
+    height: 80px;
+    padding: 1em;
+    font-size: large;
+    cursor: pointer;
+    padding: 0.25em, 1em;
+    border-radius: 0.25em;
+    opacity: 1;
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 
+                 0 0 0.45em currentcolor;
+    transition: width 0.5s, height 0.5s, transform 0.5s;
+}
+
+.encrypt-button {
+    background-color: rgb(39, 110, 232);
+    color: rgb(21, 0, 255);
+    border: rgb(21, 0, 255) 0.25em solid;
+    box-shadow: inset 0 0 0.5em 0 rgb(21, 0, 255), 
+                0 0 0.5em 0 rgb(21, 0, 255);
+}
+
+.decrypt-button {
+    background-color: rgb(30, 167, 194);
+    color: rgb(17, 84, 136);
+    border: rgb(81, 162, 238) 0.25em solid;
+    box-shadow: inset 0 0 0.5em 0 rgb(81, 162, 238), 
+                0 0 0.5em 0 rgb(81, 162, 238);
+}
+
+.copy-button {
+    font-size: medium;
+    background-color: rgb(9, 87, 99);
+    color: rgb(33, 167, 163);
+    border: rgb(10, 235, 201) 0.25em solid;
+    box-shadow: inset 0 0 0.5em 0 rgb(10, 235, 201), 
+                0 0 0.5em 0 rgb(10, 235, 201);
+}
+
+.encrypt-button:hover, .decrypt-button:hover, .copy-button:hover {
+    color: rgb(13, 255, 0);
+    border: rgba(0, 255, 174, 0.768) 0.125em solid;
+    background-color: rgba(49, 169, 151, 0.768);
+    opacity: 1;
+    box-shadow: inset 0 0 0.5em 0 rgba(6, 240, 96, 0.768), 
+                0 0 0.5em 0 rgba(7, 218, 81, 0.768);
+    text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 
+                 0 0 0.45em currentcolor;
+    transition: opacity 100ms linear;
+    font-size: large;
+    width: 180px;
+    padding: 0.25em, 1em;
+    border-radius: 0.25em;
+    transition: width 0.5s, height 0.5s, transform 0.5s, font-size 0.5s;
+}
+
+.encrypt-button::before, .decrypt-button::before, .copy-button::before {
+    content: "";
+    top: -2px;
+    left: -2px;
+    height: calc(100% + 10px);
+    width: calc(100% + 10px);
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    
+}
+
+.encrypt-button:hover:active, .decrypt-button:hover:active, .copy-button:active {
+    background: none;
+}
+

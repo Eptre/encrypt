@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon_io/logo.png">
+    <script src="https://kit.fontawesome.com/e0abe75480.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style-encrypter.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Encrypter</title>
+</head>
+
+<body>
+        <div class="general-container">
+            <span class="console-message">Enter text</span>
+            <textarea id="message" spellcheck="false" class="input-area" placeholder="Only lowercase letters and no accents."></textarea>
+            <div class="buttons">
+                <button class="encrypt-button" onclick="encrypt()">Encript</button>
+                <button class="decrypt-button" onclick="decrypt()">Decrypt</button>
+                <button class="copy-button" onclick="clipboard()">Copy message</button>
+            </div>
+            <canvas class="output-area" id="canvas"></canvas>
+        </div>
+
+        <footer class="social">
+            <ul>
+                <a href="https://www.linkedin.com/in/erick-paniagua-trejo/" target="_blank"><li><i class="fab fa-linkedin"></i></li></a>
+                <a href="https://github.com/Eptre" target="_blank"><li><i class="fab fa-github-square"></i></li></a>
+            </ul>
+        </footer>
+        
+<script src="main.js"></script>
+</body>
+</html>
